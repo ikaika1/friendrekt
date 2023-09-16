@@ -19,26 +19,26 @@ the story goes:
 ## algo
 ```
 /*
-    here's a brief overview of the sniper:
-    there are two tokio threads. 
+    スナイパーの概要です：
+    tokio のスレッドは2つある。
 
-    1. listen to every block.
-        for every ETH transfer or bridge relays:
-            reverse search the addresses involved on friend.tech
-            find the number of followers
-            if the address is not cached:
-                cache the address
+    1.すべてのブロックを聞く。
+        すべてのETH転送またはブリッジリレーについて：
+            friend.techで関係するアドレスを逆検索する。
+            フォロワーの数を見つける
+            アドレスがキャッシュされていない場合
+                アドレスをキャッシュする。
 
-    2. listen to blast-api eth_newPendingTransactions
-        there are multiple (4?) backend nodes so subscribe a few times
-            (afaict its mostly rng which stream you get)
-            (also run this bot on several geo-distributed servers)
-            if its a first-share-buy (a signup):
-                if the address is cached:
-                    if follow count > 20k: send snipe tx
-                otherwise:
-                    do a live lookup of follow count
-                    if follow count > 20k: send snipe tx
+    2. blast-api eth_newPendingTransactions をリッスンする。
+        複数の(4?)バックエンドノードがあるので、数回サブスクライブする。
+            (どのストリームを取得するかは、ほとんどrngである。）
+            (このボットを複数の地理的に分散したサーバーで動作させる。）
+            最初のシェア購入（サインアップ）の場合：
+                アドレスがキャッシュされている場合
+                    フォロー数>20kの場合: スナイプTXを送信
+                そうでなければ
+                    フォロー数のライブ検索を行う
+                    フォロー数>20kの場合：スナイプTXを送る
 */
 ```
 
